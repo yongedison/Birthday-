@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #5c0a0a; /* Maroon */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+}
+
+.slide {
+    display: none;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.slide.active {
+    display: block;
+}
+
+/* GIFT SLIDE */
+.gift-wrapper {
+    text-align: center;
+    cursor: pointer;
+}
+.gift-box {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: bounce 1s infinite alternate;
+}
+
+/* LETTER SLIDE */
+.letter {
+    background: #fff;
+    color: #333;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-top: 8px solid #d4af37; /* Gold touch */
+}
+.script-font {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #5c0a0a;
+    margin-bottom: 15px;
+}
+
+/* TICKET SLIDE */
+.ticket {
+    background: #fff;
+    color: #333;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 2px dashed #d4af37;
+}
+.ticket-header {
+    background: #d4af37; /* Gold */
+    color: #5c0a0a;
+    padding: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.photo-frame {
+    position: relative;
+    margin: 20px auto;
+    width: 140px;
+}
+.photo-frame img {
+    width: 100%;
+    border-radius: 10px;
+    border: 4px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+.stamp {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    background: #5c0a0a;
+    color: #d4af37;
+    padding: 5px 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transform: rotate(15deg);
+}
+
+.question {
+    font-size: 1.2rem;
+    padding: 0 20px;
+}
+
+/* BUTTONS */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+    padding-bottom: 25px;
+}
+.btn, #yes-btn, #no-btn {
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+#yes-btn, .btn {
+    background: #5c0a0a;
+    color: #fff;
+}
+#no-btn {
+    background: #e0e0e0;
+    color: #666;
+    position: absolute;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-20px); }
+}
