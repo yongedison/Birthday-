@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Birthday Surprise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="slide1" class="slide active">
+            <div class="gift-wrapper" onclick="nextSlide(2)">
+                <div class="gift-box">🎁</div>
+                <h2>You have a birthday gift!</h2>
+                <p>Tap to unwrap</p>
+            </div>
+        </div>
+
+        <div id="slide2" class="slide">
+            <div class="letter">
+                <h1 class="script-font">Happy Birthday!</h1>
+                <div class="letter-text">
+                    <p>On this special day, I just wanted to remind you how amazing you are.</p>
+                    <p>May your year be filled with love, laughter, and all the things that make you happy.</p>
+                    <p>I have a little something to celebrate your day...</p>
+                </div>
+                <button class="btn" onclick="nextSlide(3)">Open Surprise →</button>
+            </div>
+        </div>
+
+        <div id="slide3" class="slide">
+            <div class="ticket">
+                <div class="ticket-header">
+                    <span>BIRTHDAY CELEBRATION TICKET</span>
+                </div>
+                <div class="ticket-content">
+                    <div class="photo-frame">
+                        <img src="https://via.placeholder.com/150" alt="Birthday Person">
+                        <div class="stamp">SPECIAL DAY 🎂</div>
+                    </div>
+                    <h2 class="question">Ready for your birthday treat?</h2>
+                    <div class="btn-group">
+                        <button id="yes-btn" onclick="celebrate()">YES, LET'S GO!</button>
+                        <button id="no-btn" onmouseover="moveNo()">NO</button>
+                    </div>
+                </div>
+                <div class="ticket-footer">
+                    <p>EXCLUSIVE PASS | FOR THE BEST PERSON</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="slide4" class="slide">
+            <div class="success-screen">
+                <h1 class="script-font">Hurray! 🎉</h1>
+                <p>Happy Birthday once again!</p>
+                <p>Check your DM for the location!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
