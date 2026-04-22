@@ -1,43 +1,25 @@
+function updateClock() {
+    const now = new Date();
+    document.getElementById('live-clock').innerText = now.toLocaleTimeString('en-GB');
+}
+setInterval(updateClock, 1000);
+updateClock();
+
 function nextSlide(n) {
     document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
-    document.getElementById('slide' + n).classList.add('active');
-}
-
-function moveNo() {
-    const btn = document.getElementById('no-btn');
-    const x = Math.random() * (window.innerWidth - btn.offsetWidth);
-    const y = Math.random() * (window.innerHeight - btn.offsetHeight);
-    btn.style.left = x + 'px';
-    btn.style.top = y + 'px';
+    const next = document.getElementById('slide' + n);
+    if(next) next.classList.add('active');
+    
+    const bg = document.getElementById('bg-layer');
+    bg.className = 'bg-transition slide' + n + '-bg';
 }
 
 function celebrate() {
-    // Efek kembang api/confetti buat ultah
-    const duration = 3 * 1000;
-    const end = Date.now() + duration;
-
-    (function frame() {
-        confetti({
-            particleCount: 3,
-            angle: 60,
-            spread: 55,
-            origin: { x: 0 },
-            colors: ['#d4af37', '#5c0a0a']
-        });
-        confetti({
-            particleCount: 3,
-            angle: 120,
-            spread: 55,
-            origin: { x: 1 },
-            colors: ['#d4af37', '#5c0a0a']
-        });
-
-        if (Date.now() < end) {
-            requestAnimationFrame(frame);
-        }
-    }());
-
-    setTimeout(() => {
-        nextSlide(4);
-    }, 1000);
+    confetti({ 
+        particleCount: 150, 
+        spread: 80, 
+        origin: { y: 0.6 }, 
+        colors: ['#5c0a0a', '#FFB6C1', '#D4AF37'] 
+    });
+    setTimeout(() => nextSlide(4), 1200);
 }
