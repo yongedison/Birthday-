@@ -50,3 +50,21 @@ body { font-family: 'Poppins', sans-serif; height: 100vh; overflow: hidden; disp
 @keyframes pop { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 .gift-animation { font-size: 80px; animation: bounce 1.5s infinite; cursor: pointer; }
 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+/* Aturan khusus untuk layar Lebar (Laptop/Desktop) */
+@media (min-width: 768px) {
+    .scrapbook-container {
+        max-width: 900px; /* Batasi lebar maksimal biar nggak melar */
+        margin: 0 auto;   /* Biar posisinya di tengah layar laptop */
+        height: 80vh;     /* Tetap batasi tinggi biar scroll-nya aktif */
+        border: 10px solid #f8edeb; /* Kasih frame tambahan biar estetik */
+        border-radius: 20px;
+    }
+
+    .photo-collage-column {
+        flex: 0 0 40%; /* Kolom foto jangan terlalu lebar, cukup 40% */
+    }
+
+    .letter-text-column {
+        font-size: 1.1rem; /* Besarkan dikit ukuran font biar enak dibaca di monitor gede */
+    }
+}
