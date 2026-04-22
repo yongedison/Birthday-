@@ -3,62 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Special Birthday Surprise</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Birthday Surprise | Premium Scrapbook</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <div id="bg-layer" class="bg-transition slide1-bg"></div>
+    <div id="live-clock" class="digital-clock">00:00:00</div>
+
+    <div class="floating-bg">
+        <div class="balloon pink"></div>
+        <div class="balloon maroon"></div>
+        <div class="balloon gold"></div>
+        <div class="balloon white"></div>
+    </div>
+
     <div class="container">
+        
         <div id="slide1" class="slide active">
-            <div class="gift-wrapper" onclick="nextSlide(2)">
-                <div class="gift-box">🎁</div>
-                <h2>You have a birthday gift!</h2>
-                <p>Tap to unwrap</p>
+            <div class="card intro-card" onclick="nextSlide(2)">
+                <div class="gift-animation">🎁</div>
+                <h2 class="script-font">You have a gift!</h2>
+                <p>Click the box to unwrap your surprise</p>
+                <div class="decor star1">✨</div>
+                <div class="decor star2">✨</div>
             </div>
         </div>
 
         <div id="slide2" class="slide">
-            <div class="letter">
+            <div class="card letter-card animate-pop">
                 <h1 class="script-font">Happy Birthday!</h1>
-                <div class="letter-text">
-                    <p>On this special day, I just wanted to remind you how amazing you are.</p>
-                    <p>May your year be filled with love, laughter, and all the things that make you happy.</p>
-                    <p>I have a little something to celebrate your day...</p>
+                <div class="letter-body">
+                    <p>Wishing you a day as <span class="highlight">beautiful</span> as you are.</p>
+                    <p>I've prepared a digital scrapbook of our memories.</p>
                 </div>
-                <button class="btn" onclick="nextSlide(3)">Open Surprise →</button>
+                <button class="primary-btn" onclick="nextSlide(3)">Open Surprise →</button>
             </div>
         </div>
 
-        <div id="slide3" class="slide">
-            <div class="ticket">
-                <div class="ticket-header">
-                    <span>BIRTHDAY CELEBRATION TICKET</span>
-                </div>
-                <div class="ticket-content">
-                    <div class="photo-frame">
-                        <img src="https://via.placeholder.com/150" alt="Birthday Person">
-                        <div class="stamp">SPECIAL DAY 🎂</div>
+        <div id="slide3" class="slide scrapbook-slide">
+            <div class="scrapbook-container">
+                <div class="photo-collage-column">
+                    <div class="polaroid p1">
+                        <img src="https://via.placeholder.com/100" alt="Us">
+                        <span class="p-caption">Every Moment ❤️</span>
                     </div>
-                    <h2 class="question">Ready for your birthday treat?</h2>
-                    <div class="btn-group">
-                        <button id="yes-btn" onclick="celebrate()">YES, LET'S GO!</button>
-                        <button id="no-btn" onmouseover="moveNo()">NO</button>
+                    <div class="polaroid p2">
+                        <img src="https://via.placeholder.com/100" alt="Memory">
+                        <span class="p-caption">Pure Joy 💭</span>
+                    </div>
+                    <div class="polaroid p3">
+                        <img src="https://via.placeholder.com/100" alt="Laughs">
+                        <span class="p-caption">Forever 😂</span>
                     </div>
                 </div>
-                <div class="ticket-footer">
-                    <p>EXCLUSIVE PASS | FOR THE BEST PERSON</p>
+
+                <div class="letter-text-column">
+                    <div class="love-symbols">❤️❤️❤️❤️❤️</div>
+                    <div class="scrapbook-letter-body">
+                        <p>maybe it was in the way you listened when I had nothing to say, or the way you smiled without even trying to.</p>
+                        <p>I realized that home isn't always a place; sometimes it's a person who makes everything feel calmer, safer, and much warmer.</p>
+                        <p>You have this gentle way of turning ordinary moments into something extraordinary, just by being there. Life is a collection of small steps, and I'm so grateful that some of mine led me straight to you.</p>
+                        <p>It’s not just about the big celebrations, but about choosing someone every single day and saying, "Here. With you. This is exactly where I want to be."</p>
+                        <p>On your special day, I hope you see yourself through my eyes—as someone who is kind, strong, and incredibly loved. May your year bloom gently, and may every dream you hold close finally find its way to you.</p>
+                    </div>
+                    <div class="letter-footer">
+                        <p class="love-signature">Always yours, <span class="highlight">Me</span></p>
+                        <button class="scrapbook-btn" onclick="celebrate()">See My Last Gift →</button>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div id="slide4" class="slide">
-            <div class="success-screen">
-                <h1 class="script-font">Hurray! 🎉</h1>
-                <p>Happy Birthday once again!</p>
-                <p>Check your DM for the location!</p>
+            <div class="card final-card animate-zoom">
+                <div class="flower-container">
+                    <img src="rose.jpg" alt="Red Roses" class="rose-img">
+                </div>
+                <h1 class="script-font">Happy Birthday! ❤️</h1>
+                <p>May your day be as bright as these roses.</p>
+                <div class="decor party1">🎉</div>
+                <div class="decor party2">🎉</div>
             </div>
         </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
